@@ -75,3 +75,82 @@ def zeta(n):
 ```
 ### **RESPUESTA:** 📌
 mientras la funcion Zeta de Riemann se aproxima a $\frac{\pi^2}{6}$, la funcion Libre se aproxima a $\frac{6}{\pi^2}$
+
+
+### **PROBLEMA2**
+
+Se elige al azar un entero n $\in \Omega:=$ {1,...N} con N := 100 y deseamos estudiar el evento A 
+$:=$ {n es un numero perfecto}
+
+a) utilice la funcion $V(x)$ para hallar el valor teorico de $P(A)$
+
+```
+def perfecto(n):
+
+    x = 2
+    perfecto= 0 # se suma los divisores de x
+    
+    while x <= n:
+
+        if n % x == 0:
+            perfecto += n/x
+        x += 1
+        
+    if perfecto == n:
+       return True
+    else:
+        return False
+```
+```
+#definimos una funcion que nos calcule el numero de numeros perfectos <= x
+def v(x):
+   
+    sum = 0
+
+    for i in range(1,x):
+        
+        if perfecto(i) == True:
+            sum += 1
+            prob = sum / x
+
+    return prob
+
+#el valor teorico de P(A) es:
+valor_teorico = v(1000)
+print(valor_teorico)
+```
+
+b) Realice una simulacion para estimar el valor teorico de $P(A)$ obtenido en $(a)$
+
+```
+#simulacion para estimar P(A)
+def P(A):
+    
+    sum = 0
+
+    for i in range(A):
+            x = random.randint(1,A)
+            
+            if perfecto(x) == True:
+                sum += 1
+                prob = sum / A
+
+    return prob
+
+P(1000)
+
+if __name__ == '_main_':
+
+```
+c) ¿ Que ocurre cuando el espacio muestral $\Omega $ cambia y $N=1000, N=10000, N=100000$
+
+
+```
+ #Espacio muestral para N muy grandes
+ muestra = v(1000)/1000
+ print(muestra)
+```
+### **RESPUESTA:** 📌
+Cuando el espacio muestral cambia a N muy grande, P(A) decrementa,
+es decir a medida que N aumenta, el evento A := {n es un numero perfecto} se reduce. 
+La probabilidad de que el evento suceda se vuelve cada vez mas remota.

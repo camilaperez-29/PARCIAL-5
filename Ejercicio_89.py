@@ -18,7 +18,6 @@ def perfecto(n):
     x = 2
     perfecto= 0 # se suma los divisores de x
     
-
     while x <= n:
 
         if n % x == 0:
@@ -29,7 +28,6 @@ def perfecto(n):
        return True
     else:
         return False
-
 
 perfecto(3)
 
@@ -71,8 +69,6 @@ if __name__ == '_main_':
  #Espacio muestral para N muy grandes
  muestra = v(1000)/1000
  print(muestra)
-
-
 
 '''
 

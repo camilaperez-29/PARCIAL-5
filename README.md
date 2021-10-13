@@ -26,7 +26,7 @@ Un teorema afirma que
         import random
     ```
 
-- segundo = definamos la función `libre(n)` en el lenguaje de Python.
+- segundo = definamos la función `libre(n) ` la cual estima la probabilidad de que un entero escogido al azar sea libre de cuadrados en el lenguaje de Python.
 
 
 ``` 
@@ -50,7 +50,7 @@ def libre(n):
     return probabilidad
 
 ```
-- Tercero: Comaparamos con la funcion `zeta(n)` y el valor teorico del teorema
+- Tercero: Comaparamos con la funcion `zeta(n)`, el valor teorico del teorema y la funcion `libre(n)`
 
 ```
 def zeta(n):
